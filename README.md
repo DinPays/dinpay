@@ -1,5 +1,3 @@
-![DinPay](https://i.imgur.com/1aP6F2o.png)
-
 # DinPay
 
 ## Introduction
