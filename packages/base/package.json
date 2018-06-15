@@ -66,5 +66,8 @@
     "@dinpay/txhub": "*",
     "@dinpay/txhub-redis": "*",
     "@dinpay/webhooks": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

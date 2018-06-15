@@ -26,5 +26,8 @@
     "@dinpay/capsule": "*",
     "@dinpay/encryption": "*",
     "lodash": "^4.17.10"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

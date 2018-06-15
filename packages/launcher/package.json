@@ -34,5 +34,8 @@
     "joi": "^13.3.0",
     "lodash": "^4.17.10",
     "pino": "^4.16.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

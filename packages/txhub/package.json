@@ -24,5 +24,8 @@
     "async": "^2.6.1",
     "@dinpay/capsule": "*",
     "@dinpay/encryption": "*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

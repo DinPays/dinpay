@@ -25,5 +25,8 @@
     "@dinpay/encryption": "^0.1.0",
     "@dinpay/txhub": "^0.1.0",
     "ioredis": "^3.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

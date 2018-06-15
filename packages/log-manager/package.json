@@ -17,5 +17,8 @@
     "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
     "lint": "eslint ./ --fix",
     "depcheck": "depcheck ./"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
