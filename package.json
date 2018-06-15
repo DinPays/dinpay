@@ -1,5 +1,4 @@
 {
-  "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build:docs": "lerna run build:docs",
