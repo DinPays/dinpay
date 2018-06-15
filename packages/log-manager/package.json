@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/log-manager",
   "description": "DinPay Ledger Log Management",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "Brian Faust <brian@ark.io>"

@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/dindb-sequelize",
   "description": "Sequelize ORM for DinPay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io",
     "François-Xavier Thoorens <fx@ark.io>",
@@ -22,9 +22,9 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
-    "@dinpay/capsule": "*",
-    "@dinpay/dindb": "*",
-    "@dinpay/encryption": "*",
+    "@dinpay/capsule": "^0.1.10",
+    "@dinpay/dindb": "^0.1.18",
+    "@dinpay/encryption": "^0.1.22",
     "expand-home-dir": "*",
     "fs-extra": "^6.0.1",
     "mysql2": "^1.5.3",

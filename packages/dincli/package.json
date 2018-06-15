@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/dincli",
   "description": "DinPay Official Command CLI",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "contributors": [
     "DinPay Inc. <developers@dinpay.io>",
     "Brian Faust <brian@ark.io>",
@@ -25,8 +25,8 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "@dinpay/encryption": "^0.1.0"
+    "@dinpay/encryption": "^0.1.22",
+    "axios": "^0.18.0"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.15.0"

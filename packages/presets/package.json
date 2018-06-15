@@ -1,6 +1,6 @@
 {
   "name": "@dinpay/presets",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Configuration Loader for DinPay",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
@@ -20,9 +20,9 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
+    "@dinpay/encryption": "^0.1.22",
     "axios": "^0.18.0",
     "deepmerge": "^2.1.0",
-    "@dinpay/encryption": "*",
     "directory-tree": "^2.1.0",
     "expand-home-dir": "^0.0.3",
     "fs-extra": "^6.0.1",

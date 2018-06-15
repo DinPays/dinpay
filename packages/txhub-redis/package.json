@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/txhub-redis",
   "description": "Transaction Pool - Redis Implementation for DinPay",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io",
     "Kristjan Košič <kristjan@ark.io>",
@@ -21,9 +21,9 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
-    "@dinpay/capsule": "^0.1.0",
-    "@dinpay/encryption": "^0.1.0",
-    "@dinpay/txhub": "^0.1.0",
+    "@dinpay/capsule": "^0.1.10",
+    "@dinpay/encryption": "^0.1.22",
+    "@dinpay/txhub": "^0.1.13",
     "ioredis": "^3.2.2"
   },
   "publishConfig": {

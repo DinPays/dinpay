@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/validation",
   "description": "Validation for DinPay",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io",
     "Brian Faust <brian@ark.io>",
@@ -20,7 +20,7 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
-    "@dinpay/capsule": "^0.1.0",
+    "@dinpay/capsule": "^0.1.10",
     "joi": "^13.3.0"
   },
   "publishConfig": {

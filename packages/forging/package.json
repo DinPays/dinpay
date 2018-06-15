@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/forging",
   "description": "DinPay Forger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "François-Xavier Thoorens <fx@ark.io>",
@@ -21,10 +21,10 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
+    "@dinpay/capsule": "^0.1.10",
+    "@dinpay/encryption": "^0.1.22",
     "axios": "^0.18.0",
     "delay": "^2.0.0",
-    "@dinpay/capsule": "*",
-    "@dinpay/encryption": "*",
     "lodash": "^4.17.10"
   },
   "publishConfig": {

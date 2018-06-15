@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/rpc",
   "description": "DinPay RPC Server",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "François-Xavier Thoorens <fx@ark.io>",

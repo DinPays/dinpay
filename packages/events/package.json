@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/events",
   "description": "DinPay Ledger's Event Library",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "Brian Faust <brian@ark.io>"

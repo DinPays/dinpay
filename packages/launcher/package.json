@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/launcher",
   "description": "DinPay Ledger Launcher Library",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "Brian Faust <brian@ark.io>",
@@ -23,10 +23,10 @@
     "depcheck": "depcheck ./ --ignores=commander"
   },
   "dependencies": {
+    "@dinpay/presets": "^0.1.10",
     "bigi": "^1.4.2",
     "bytebuffer": "^5.0.1",
     "commander": "^2.15.1",
-    "@dinpay/presets": "*",
     "dinpayjs": "*",
     "envfile": "^2.3.0",
     "expand-home-dir": "0.0.3",

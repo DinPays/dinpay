@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/txhub",
   "description": "Transaction Pool Manager for DinPay",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io",
     "Kristjan Košič <kristjan@ark.io>",
@@ -21,9 +21,9 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
-    "async": "^2.6.1",
-    "@dinpay/capsule": "*",
-    "@dinpay/encryption": "*"
+    "@dinpay/capsule": "^0.1.10",
+    "@dinpay/encryption": "^0.1.22",
+    "async": "^2.6.1"
   },
   "publishConfig": {
     "access": "public"

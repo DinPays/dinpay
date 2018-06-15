@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/ledger",
   "description": "DinPay Blockchain Management",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "François-Xavier Thoorens <fx@ark.io>",
@@ -21,10 +21,10 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
+    "@dinpay/capsule": "^0.1.10",
+    "@dinpay/encryption": "^0.1.22",
     "async": "^2.6.1",
     "delay": "^2.0.0",
-    "@dinpay/capsule": "*",
-    "@dinpay/encryption": "*",
     "interval-to-human": "^0.1.1",
     "xstate": "^3.2.1"
   },

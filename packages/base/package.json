@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/base",
   "description": "DinPay Core Blockchain Libary",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "François-Xavier Thoorens <fx@ark.io>",
@@ -50,22 +50,22 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
-    "commander": "^2.15.1",
-    "@dinpay/base-logger": "*",
-    "@dinpay/dindb": "*",
-    "@dinpay/dindb-sequelize": "*",
-    "@dinpay/dinpay-api": "*",
-    "@dinpay/encryption": "*",
-    "@dinpay/forging": "*",
-    "@dinpay/gqldb": "*",
-    "@dinpay/ledger": "*",
-    "@dinpay/log-manager": "*",
-    "@dinpay/peers": "*",
-    "@dinpay/presets": "*",
-    "@dinpay/rpc": "*",
-    "@dinpay/txhub": "*",
-    "@dinpay/txhub-redis": "*",
-    "@dinpay/webhooks": "*"
+    "@dinpay/base-logger": "^0.1.18",
+    "@dinpay/dindb": "^0.1.18",
+    "@dinpay/dindb-sequelize": "^0.1.1",
+    "@dinpay/dinpay-api": "^0.1.15",
+    "@dinpay/encryption": "^0.1.22",
+    "@dinpay/forging": "^0.1.1",
+    "@dinpay/gqldb": "^0.1.22",
+    "@dinpay/ledger": "^0.1.18",
+    "@dinpay/log-manager": "^0.1.16",
+    "@dinpay/peers": "^0.1.10",
+    "@dinpay/presets": "^0.1.10",
+    "@dinpay/rpc": "^0.1.10",
+    "@dinpay/txhub": "^0.1.13",
+    "@dinpay/txhub-redis": "^0.1.15",
+    "@dinpay/webhooks": "^0.1.12",
+    "commander": "^2.15.1"
   },
   "publishConfig": {
     "access": "public"

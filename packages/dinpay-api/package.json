@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/dinpay-api",
   "description": "Public API for DinPay",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "Kristjan Košič <kristjan@ark.io>",
@@ -20,13 +20,13 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
+    "@dinpay/capsule": "^0.1.10",
+    "@dinpay/encryption": "^0.1.22",
     "ajv": "^6.5.0",
     "bignumber.js": "^7.1.0",
     "boom": "^7.2.0",
     "bs58check": "^2.1.1",
     "catbox-redis": "^4.1.0",
-    "@dinpay/capsule": "*",
-    "@dinpay/encryption": "*",
     "hapi": "^17.5.0",
     "hapi-api-version": "https://github.com/faustbrian/hapi-api-version",
     "hapi-pagination": "https://github.com/faustbrian/hapi-pagination",

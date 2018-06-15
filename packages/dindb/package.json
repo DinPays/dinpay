@@ -1,7 +1,7 @@
 {
   "name": "@dinpay/dindb",
   "description": "DinPay Database Interface",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "contributors": [
     "DinPay, Inc. <developers@dinpay.io>",
     "François-Xavier Thoorens <fx@ark.io>",
@@ -21,10 +21,10 @@
     "depcheck": "depcheck ./"
   },
   "dependencies": {
+    "@dinpay/capsule": "^0.1.10",
+    "@dinpay/encryption": "^0.1.22",
     "async": "^2.6.1",
     "bluebird": "^3.5.1",
-    "@dinpay/capsule": "*",
-    "@dinpay/encryption": "*",
     "expand-home-dir": "^0.0.3",
     "fs-extra": "^6.0.1",
     "lodash": "^4.17.10"
