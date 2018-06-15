@@ -1,0 +1,35 @@
+{
+  "name": "@dinpay/peers",
+  "description": "DinPay P2P API",
+  "version": "0.1.9",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io>",
+    "François-Xavier Thoorens <fx@ark.io>",
+    "Kristjan Košič <kristjan@ark.io>",
+    "Brian Faust <brian@ark.io>",
+    "Alex Barnsley <alex@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "ajv": "^6.5.0",
+    "axios": "^0.18.0",
+    "@dinpay/capsule": "*",
+    "@dinpay/encryption": "*",
+    "hapi": "^17.5.0",
+    "lodash": "^4.17.10",
+    "request-ip": "^2.0.2",
+    "sntp": "^3.0.1",
+    "threads": "^0.11.0"
+  }
+}

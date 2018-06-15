@@ -1,0 +1,24 @@
+{
+  "name": "@dinpay/events",
+  "description": "DinPay Ledger's Event Library",
+  "version": "0.1.12",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io>",
+    "Brian Faust <brian@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "eventemitter3": "^3.1.0"
+  }
+}

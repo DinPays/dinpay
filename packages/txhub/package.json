@@ -1,0 +1,28 @@
+{
+  "name": "@dinpay/txhub",
+  "description": "Transaction Pool Manager for DinPay",
+  "version": "0.1.12",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io",
+    "Kristjan Košič <kristjan@ark.io>",
+    "Brian Faust <brian@ark.io>",
+    "Alex Barnsley <alex@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "@dinpay/capsule": "*",
+    "@dinpay/encryption": "*"
+  }
+}

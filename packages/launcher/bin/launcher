@@ -1,0 +1,136 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const commander = require('commander')
+const Joi = require('joi')
+const fs = require('fs-extra')
+const os = require('os')
+const path = require('path')
+const { getRandomNumber, logger, updateConfig, writeEnv } = require('../lib/utils')
+const genesisBlockBuilder = require('../lib/builder/genesis-block')
+
+process.env.DINPAY_PRESET_PATH = path.resolve(os.homedir(), '.dinpay')
+
+commander
+  .version(require('../package.json').version)
+  .option('--network <value>', 'Network to initially copy', 'live')
+  .option('--name <value>', 'Name', 'SideChain')
+  .option('--nodeIp <value>', 'IP for node', '0.0.0.0')
+  .option('--p2pPort <value>', 'P2P API Port', 4102)
+  .option('--apiPort <value>', 'Public P2P Port', 4103)
+  .option('--dbHost <value>', 'Database host', 'localhost')
+  .option('--dbPort <value>', 'Database port', 5432)
+  .option('--dbUsername <value>', 'Database username', 'node')
+  .option('--dbPassword <value>', 'Database password', 'password')
+  .option('--dbDatabase <value>', 'Database name', `dinpay_${commander.name}`)
+  .option('--explorerUrl <value>', 'URL to link to explorer', 'http://localhost:4200')
+  .option('--activeDelegates <value>', 'How many forgers for the network [51]', 51)
+  .option('--feeSend <value>', 'Fee for sending Transaction', 10000000)
+  .option('--feeVote <value>', 'Fee for Vote Transaction', 100000000)
+  .option('--feeSecondSignature <value>', 'Fee for Second Passphrase Transaction', 500000000)
+  .option('--feeDelegate <value>', 'Fee for Register Delegate Transaction', 2500000000)
+  .option('--feeMultisignature <value>', 'Fee for Multisignature Transaction', 500000000)
+  .option('--epoch <value>', 'Set Epoch based on time the chain was created', '2017-02-21T13:00:00.000Z')
+  .option('--rewardHeight <value>', 'Block Height when Forgers receive Rewards [1]', 1)
+  .option('--rewardPerBlock <value>', 'How many Rewarded Tokens per Forged Block [200000000 (2)]', 200000000)
+  .option('--blocktime <value>', 'Time per block (seconds) [8]', 8)
+  .option('--token <value>', 'Token Name [CHAIN]', 'CHAIN')
+  .option('--symbol <value>', 'Symbol for Token [C]', 'C')
+  .option('--prefixHash <value>', 'Address Prefix Hash [28]', 28)
+  .option('--transactionsPerBlock <value>', 'Max Transaction count per Block [50]', 50)
+  .option('--wifPrefix <value>', 'Prefix for generating a WIF [rand(1, 255)]', getRandomNumber(1, 255))
+  // .option('--max-votes', 'Max Votes per Wallet [1]')
+  .option('--totalPremine <value>', 'How many tokens initially added to genesis account [2100000000000000 (21 million)]', 2100000000000000)
+  // .option('--max-tokens-per-account', 'Max amount of tokens per account [12500000000000000 (125 million)]')
+  .option('--overwriteConfig', 'Overwrite current launcher config files [off]', false)
+  .option('--configPath <value>', 'Deployer config path destination [~/.dinpay/launcher]', `${process.env.DINPAY_PRESET_PATH}/launcher`)
+  .parse(process.argv)
+
+const { error, value } = Joi.validate(commander, require('../lib/schema.js'), { allowUnknown: true, convert: true })
+const options = value
+
+if (error) {
+  error.details.forEach(detail => logger.error(detail.message))
+  process.exit(1)
+}
+
+if (fs.existsSync(options.configPath)) {
+  if (options.overwriteConfig) {
+    fs.removeSync(options.configPath)
+  } else {
+    logger.error(`Deployer config already exists in '${options.configPath}' - to overwrite, use the '--overwriteConfig' flag`)
+    process.exit(1)
+  }
+}
+fs.ensureDirSync(options.configPath)
+fs.copySync(path.resolve(__dirname, `../../core/lib/config/${options.network}`), options.configPath)
+
+let networkConfig = {
+  name: options.name.toLowerCase(),
+  messagePrefix: `${options.token} message:\n`,
+  pubKeyHash: options.prefixHash,
+  wif: options.wifPrefix,
+  'constants[0].blocktime': options.blocktime,
+  'constants[0].block.maxTransactions': options.transactionsPerBlock,
+  'constants[0].epoch': options.epoch,
+  'constants[0].activeDelegates': options.activeDelegates,
+  'constants[0].fees.send': options.feeSend,
+  'constants[0].fees.vote': options.feeVote,
+  'constants[0].fees.secondsignature': options.feeSecondSignature,
+  'constants[0].fees.delegate': options.feeDelegate,
+  'constants[0].fees.multisignature': options.feeMultisignature,
+  'client.token': options.token,
+  'client.symbol': options.symbol,
+  'client.explorer': options.explorerUrl,
+  exceptions: {}
+}
+
+const network = updateConfig('network.json', networkConfig, options.configPath)
+
+const genesis = (new genesisBlockBuilder(network, options)).generate()
+
+network.nethash = genesis.genesisBlock.payloadHash
+
+if (options.rewardHeight === 1) {
+  network.constants = [
+    network.constants[0]
+  ]
+  network.constants[0].height = options.rewardHeight
+  network.constants[0].reward = options.rewardPerBlock
+} else {
+  network.constants[1].height = options.rewardHeight
+  network.constants[1].reward = options.rewardPerBlock
+}
+
+updateConfig('network.json', networkConfig, options.configPath)
+updateConfig('peers.json', {
+  minimumNetworkReach: 1,
+  list: [{
+    ip: '127.0.0.1',
+    port: options.p2pPort
+  }],
+  sources: []
+}, options.configPath)
+
+updateConfig('genesisWallet.json', {
+  address: genesis.genesisWallet.address,
+  passphrase: genesis.genesisWallet.passphrase
+}, options.configPath, true)
+updateConfig('genesisBlock.json', genesis.genesisBlock, options.configPath, true)
+updateConfig('delegates.json', {
+  secrets: genesis.delegatePassphrases
+}, options.configPath, true)
+
+updateConfig('server.json', {
+  port: options.p2pPort,
+  fastRebuild: false
+}, options.configPath)
+
+updateConfig('api/public.json', { port: options.apiPort }, options.configPath)
+
+writeEnv({
+  P2P_PORT: options.p2pPort,
+  API_PORT: options.apiPort,
+  DB_PORT: options.dbPort
+}, '~/.dinpay/.env')

@@ -1,0 +1,42 @@
+{
+  "name": "@dinpay/dinpay-api",
+  "description": "Public API for DinPay",
+  "version": "0.1.14",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io>",
+    "Kristjan Košič <kristjan@ark.io>",
+    "Brian Faust <brian@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --runInBand --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --runInBand --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "ajv": "^6.5.0",
+    "bignumber.js": "^7.1.0",
+    "boom": "^7.2.0",
+    "bs58check": "^2.1.1",
+    "catbox-redis": "^4.1.0",
+    "@dinpay/capsule": "*",
+    "@dinpay/encryption": "*",
+    "hapi": "^17.5.0",
+    "hapi-api-version": "https://github.com/faustbrian/hapi-api-version",
+    "hapi-pagination": "https://github.com/faustbrian/hapi-pagination",
+    "hapi-rate-limit": "^2.1.2",
+    "inert": "^5.1.0",
+    "ip": "^1.1.5",
+    "joi": "^13.3.0",
+    "lodash": "^4.17.10",
+    "lout": "^11.0.1",
+    "moment": "^2.22.1",
+    "vision": "^5.3.2"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "@dinpay/encryption",
+  "description": "Cryptography Library For DinPay's Distributed Ledger.",
+  "version": "0.1.21",
+  "contributors": [
+    "DinPay Inc. <developers@dinpay.io>",
+    "François-Xavier Thoorens <fx.thoorens@ark.io>",
+    "Brian Faust <brian@ark.io>",
+    "Alex Barnsley <alex@ark.io>",
+    "Lúcio Rubens <lucio@ark.io>",
+    "Juan A. Martín <juan@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "browser": "dist/index.min.js",
+  "scripts": {
+    "_prepublish": "yarn run lint && yarn run test && yarn run build",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config build/webpack.config.js",
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "jest --watch",
+    "test:watch:all": "jest --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "bigi": "^1.4.2",
+    "bip38": "^2.0.2",
+    "bip66": "^1.1.5",
+    "bs58check": "^2.1.1",
+    "bytebuffer": "^5.0.1",
+    "create-hash": "^1.2.0",
+    "create-hmac": "^1.1.7",
+    "deepmerge": "^2.1.0",
+    "@dinpay/validation": "*",
+    "dinpayjs-v1": "*",
+    "ecurve": "^1.0.6",
+    "eslint-config-standard": "^12.0.0-alpha.0",
+    "fast-glob": "^2.2.2",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1",
+    "node-forge": "^0.7.5",
+    "otplib": "^9.0.0",
+    "randombytes": "^2.0.6",
+    "secp256k1": "^3.5.0",
+    "typeforce": "^1.12.0",
+    "wif": "^2.0.6"
+  }
+}

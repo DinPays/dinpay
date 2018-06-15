@@ -1,0 +1,37 @@
+{
+  "name": "@dinpay/rpc",
+  "description": "DinPay RPC Server",
+  "version": "0.1.9",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io>",
+    "François-Xavier Thoorens <fx@ark.io>",
+    "Brian Faust <brian@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bigi": "^1.4.2",
+    "bip38": "^2.0.2",
+    "bip39": "^2.5.0",
+    "dinpayjs": "*",
+    "hapi": "^17.5.0",
+    "is-reachable": "^2.4.0",
+    "is-url": "^1.2.4",
+    "joi": "^13.3.0",
+    "leveldown": "^4.0.0",
+    "levelup": "^2.0.2",
+    "lodash": "^4.17.10",
+    "micromatch": "^3.1.10"
+  }
+}

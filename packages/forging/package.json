@@ -1,0 +1,30 @@
+{
+  "name": "@dinpay/forging",
+  "description": "DinPay Forger",
+  "version": "0.1.0",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io>",
+    "François-Xavier Thoorens <fx@ark.io>",
+    "Kristjan Košič <kristjan@ark.io>",
+    "Brian Faust <brian@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "delay": "^2.0.0",
+    "@dinpay/capsule": "*",
+    "@dinpay/encryption": "*",
+    "lodash": "^4.17.10"
+  }
+}

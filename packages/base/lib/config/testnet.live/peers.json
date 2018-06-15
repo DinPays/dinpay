@@ -1,0 +1,30 @@
+{
+  "minimumNetworkReach": 10,
+  "blackList": [],
+  "globalTimeout": 3000,
+  "list": [
+    {
+      "ip": "nyc-test.dinpay.cloud",
+      "port": 66142
+    },
+    {
+      "ip": "sf-test.dinpay.cloud",
+      "port": 66142
+    },
+    {
+      "ip": "amsterdam-test.dinpay.cloud",
+      "port": 66142
+    },
+    {
+      "ip": "singapore-test.dinpay.cloud",
+      "port": 66142
+    },
+    {
+      "ip": "bangalore-test.dinpay.cloud",
+      "port": 66142
+    }
+  ],
+  "sources": [
+    "https://tledger.dinpay.io/testnet.json"
+  ]
+}

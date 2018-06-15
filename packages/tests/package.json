@@ -1,0 +1,27 @@
+{
+  "name": "@dinpay/tests",
+  "description": "Test Utilities for DinPay",
+  "version": "0.1.15",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io",
+    "Brian Faust <brian@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "bip39": "^2.5.0",
+    "chalk": "^2.4.1",
+    "@dinpay/encryption": "*",
+    "lodash": "^4.17.10",
+    "superheroes": "^1.0.0"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "minimumNetworkReach": 20,
+  "list": [
+    {
+      "ip": "nyc.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc2.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc3.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc4.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc5.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc6.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc7.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc8.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc9.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "nyc10.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf2.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf3.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf4.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf5.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf6.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf7.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf8.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf9.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "sf10.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore2.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore3.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore4.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore5.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore6.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore7.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore8.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore9.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "bangalore10.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "amsterdam.dinpay.cloud",
+      "port": 66140
+    },
+    {
+      "ip": "singapore.dinpay.cloud",
+      "port": 66140
+    }
+  ],
+  "blackList": [],
+  "globalTimeout": 5000,
+  "sources": [
+    "https://raw.githubusercontent.com/dinpays/peers/master/live.json"
+  ]
+}

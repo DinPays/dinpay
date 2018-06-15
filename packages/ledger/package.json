@@ -1,0 +1,31 @@
+{
+  "name": "@dinpay/ledger",
+  "description": "DinPay Blockchain Management",
+  "version": "0.1.17",
+  "contributors": [
+    "DinPay, Inc. <developers@dinpay.io>",
+    "François-Xavier Thoorens <fx@ark.io>",
+    "Kristjan Košič <kristjan@ark.io>",
+    "Brian Faust <brian@ark.io>"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build:docs": "../../node_modules/.bin/jsdoc -c jsdoc.json",
+    "test": "DIN_ECOSYSTEM=test jest --forceExit",
+    "test:coverage": "DIN_ECOSYSTEM=test jest --coverage --forceExit",
+    "test:debug": "DIN_ECOSYSTEM=test node --inspect-brk ../../node_modules/.bin/jest --runInBand --watch",
+    "test:watch": "DIN_ECOSYSTEM=test jest --runInBand --watch",
+    "test:watch:all": "DIN_ECOSYSTEM=test jest --runInBand --watchAll",
+    "lint": "eslint ./ --fix",
+    "depcheck": "depcheck ./"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "delay": "^2.0.0",
+    "@dinpay/capsule": "*",
+    "@dinpay/encryption": "*",
+    "interval-to-human": "^0.1.1",
+    "xstate": "^3.2.1"
+  }
+}
